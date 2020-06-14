@@ -5,9 +5,9 @@ def assign_timedeltas_mix(block_name):
     '''
     Appending timedeltas by block names (only for mixing)
     '''
-    if block_name in ['For Bussines']:
+    if block_name in ['For the cause']:
         return pd.Timedelta(5, unit='H')
-    elif block_name in ['Big Country', 'Remember All']:
+    elif block_name in ['Big country', 'Remember everything']:
         return pd.Timedelta(3, unit='H')
     else:
         return pd.Timedelta(1.5, unit='H')
@@ -15,7 +15,7 @@ def assign_timedeltas_mix(block_name):
 def assign_timedeltas_master(bytes):
     '''
     Assigning timedeltas to master columns.
-    Awaiting bytes as atgument.
+    Awaiting bytes as argument.
     '''
     secs = bytes*8/2304000
     delta = pd.Timedelta(secs, unit='s')
