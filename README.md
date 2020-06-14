@@ -16,19 +16,46 @@ This is a full data collectioning and processing pipeline for sound department's
 
 ## Installation
 
+*Warning:* This script originally designed for MacOS (Windows paths will not work with this version)
+
+Python version 3 should be installed. It's also recommended to use virtual environment.
+To install all the reqiurements use:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Special files and names decription
 
-`utils.py`
+- `data_pipeline.py` - csv collecting script (for more info see inline comments).
+- `utils.py` - utilities to preprocessing and processing information for report
+
+## Crontab adjustments
+
+Installation for MacOS. Just type `crontab -e` in terminal end type folowing line:
+
+```bash
+0 */3 * * * python3 /Users/{user_name}/{script_folder}/data_pipeline.py >> /Users/{user_name}/{script_folder}/logs/data.log
+```
 
 ### Postproduction working file
 
-- `sound_repository.csv`
+- `sound_repository.csv` - main comma separated file (full of surprises)
 
-### Program names
+### Program main titles
 
-- 'For Bussines'
-- 'Big Country'
-- 'Remember All'
+- "Active Environment"
+- "Big country"
+- "Hamburg Account"
+- "House E"
+- "For the cause"
+- "Remember everything"
+- "Truth?"
+- "Figure of speech"
+- "The calendar"
+- "Sound"
+- "MaMy"
+- "Bedtime Stories"
 
 ### Program types
 
@@ -52,3 +79,9 @@ This is a full data collectioning and processing pipeline for sound department's
 ## Goals
 
 This project helps to organize and automatize monthly routine and also shows the real working parameters for future KPI purposes (~if at all possible in a fully analog-bureaucratized company~).
+
+## Future improvements
+
+- Script would translit cyrillic(other symbolics) in programm names.
+- Script would record date in correct form (YYYY-MM-DD HH:MM:SS)
+- Path slashes will be replaced by unique substitutes (to impove multiplatformness).
